@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
    * @ToDo
    * */
   SaveListUsersInJson() {
-    this.http.put('./assets/List-users.json', this.listUsers).subscribe(
+    this.http.put('../assets/List-users.json', this.listUsers).subscribe(
       () => {
         console.log('User data saved successfully');
       },
