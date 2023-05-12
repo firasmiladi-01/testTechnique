@@ -48,22 +48,13 @@ export class AppComponent implements OnInit {
    * @ToDo
    * */
   LoadListUsersFromJson() {
-    this.http.get<User[]>('../assets/List-users.json').subscribe((users) => {
-      this.listUsers = [...users];
-    });
+    this.listUsers = [...this.userService.loadList()];
   }
 
   /*
    * @ToDo
    * */
   SaveListUsersInJson() {
-    this.http.put('../assets/List-users.json', this.listUsers).subscribe(
-      () => {
-        console.log('User data saved successfully');
-      },
-      (error) => {
-        console.error('Error saving user data:', error);
-      }
-    );
+    this.userService.saveList(this.listUsers);
   }
 }
