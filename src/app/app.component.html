@@ -1,5 +1,21 @@
-<p>app works!</p>
-
-<app-config-side-bar></app-config-side-bar>
-
-<app-user-card></app-user-card>
+<div class="row" style="min-height: 100vh">
+  <div [ngClass]="{ 'col-lg-3': sideBar.display, 'd-none': !sideBar.display }">
+    <app-config-side-bar
+      [user]="sideBar.user"
+      (handleSubmit)="handleSubmit($event)"
+      [nombre_enfants]="nombre_enfants"
+    ></app-config-side-bar>
+  </div>
+  <div
+    [ngClass]="{ 'col-lg-9': sideBar.display, 'col-lg-12': !sideBar.display }"
+  >
+    <app-main-section-component
+      (load)="LoadListUsersFromJson()"
+      (toggleDisplay)="toggleDisplay($event)"
+      (numberChange)="numberChange($event)"
+      (deleteMain)="deleteMain($event)"
+      (ajoutUser)="ajoutUser()"
+      [users]="listUsers"
+    ></app-main-section-component>
+  </div>
+</div>

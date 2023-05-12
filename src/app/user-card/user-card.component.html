@@ -1,1 +1,43 @@
-<p>user-card works!</p>
+<div class="card mb-4 userCard">
+  <div class="card-body" *ngIf="user">
+    <div class="d-flex justify-content-between align-items-start">
+      <h5 class="card-title">{{ user.nom + " " + user.prenom }}</h5>
+      <i
+        class="bi bi-trash"
+        style="cursor: pointer"
+        (click)="delete(user.id)"
+      ></i>
+    </div>
+    <div class="form-group">
+      <label for="nom">Nom:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nom"
+        [value]="user.nom"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <label for="prenom">Prénom:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="prenom"
+        [value]="user.prenom"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <label for="enfants">Nombre d'enfants:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="enfants"
+        [value]="user.nombre_enfants"
+        (input)="onInputChange($event)"
+      />
+    </div>
+  </div>
+  <ng-content></ng-content>
+</div>

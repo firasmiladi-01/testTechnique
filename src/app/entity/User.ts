@@ -1,8 +1,22 @@
-export class User{
+export class User {
+  private _id;
   private _nom;
   private _prenom;
   private _nombre_enfants;
 
+  constructor(id, nom, prenom, nombre) {
+    this.id = id;
+    this.nom = nom;
+    this.prenom = prenom;
+    this.nombre_enfants = nombre;
+  }
+  get id() {
+    return this._id;
+  }
+
+  set id(value) {
+    this._id = value;
+  }
   get nom() {
     return this._nom;
   }

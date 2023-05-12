@@ -1,3 +1,32 @@
-{
-
-}
+[
+  {
+    "id": 1,
+    "nom": " Doe",
+    "prenom": "John",
+    "nombre_enfants": 2
+  },
+  {
+    "id": 2,
+    "nom": " Smith",
+    "prenom": "Jane",
+    "nombre_enfants": 1
+  },
+  {
+    "id": 3,
+    "nom": " Johnson",
+    "prenom": "Michael",
+    "nombre_enfants": 3
+  },
+  {
+    "id": 4,
+    "nom": " Brown",
+    "prenom": "Emily",
+    "nombre_enfants": 0
+  },
+  {
+    "id": 5,
+    "nom": " Wilson",
+    "prenom": "David",
+    "nombre_enfants": 2
+  }
+]
